@@ -12,6 +12,10 @@ from kohya_gui.class_lora_tab import LoRATools
 from kohya_gui.custom_logging import setup_logging
 from kohya_gui.localization_ext import add_javascript
 
+# Define the env_var_exists function if needed
+def env_var_exists():
+    # Example implementation (if needed)
+    pass
 
 def UI(**kwargs):
     add_javascript(kwargs.get("language"))
@@ -43,9 +47,6 @@ def UI(**kwargs):
         log.info(f"Loaded default GUI values from '{kwargs.get('config')}'...")
 
     use_shell_flag = True
-    # if os.name == "posix":
-    #     use_shell_flag = True
-        
     use_shell_flag = config.get("settings.use_shell", use_shell_flag)
         
     if kwargs.get("do_not_use_shell", False):
